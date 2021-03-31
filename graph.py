@@ -15,28 +15,38 @@ def draw():
     """Draws a bar graph showing the results"""
     # Create figure
     plt.figure(dpi=150)
-    # y range
-    y_pos = range(len(data))
-    # Get data
-    names = data.keys()
-    votes = data.values()
+
+    # Sort names by number of votes in descending order
+    names = sorted(data.keys(), key=data.get, reverse=True)
+    # Move empty ballot group to end of list
+    names.remove("empty")
+    names.append("empty")
+    # Get votes for each candidate
+    votes = [data[name] for name in names]
+
     # Plot results
+    y_pos = range(len(data))  # y range
     bars = plt.barh(y_pos, votes, align="center")
+
     # Hide ticks
     plt.tick_params(axis="both", length=0)
     # Set tick labels to candidate names
     plt.yticks(y_pos, names)
+
     # Get current axes
     ax = plt.gca()
     # Only show integers on x axis ticks
     ax.xaxis.get_major_locator().set_params(integer=True)
     # Invert y axis
     ax.invert_yaxis()
+
     # Set empty ballot bar color to red
     bars[-1].set_color("r")
+
     # Set labels
     plt.xlabel("Votes")
     plt.title("Election Results")
+
     # Get maximum number of votes to find the graph's width
     M = max(votes)
     # Write number of votes next to each bar
@@ -48,6 +58,7 @@ def draw():
                  val,
                  ha="left",
                  va="center")
+
     # Set margins to fit vote labels
     plt.margins(0.1, 0.05)
     # Fit everything to the current layout
