@@ -1,6 +1,6 @@
 # Epsilon Grapher
 
-A simple Python program that draws a bar graph based on the results of an election conducted with `[Epsilon](https://github.com/haframjolk/epsilon)`.
+A simple Python program that draws a bar graph based on the results of an election conducted with [`Epsilon`](https://github.com/haframjolk/epsilon).
 
 ## Prerequisites
 
