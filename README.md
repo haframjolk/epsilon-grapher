@@ -1,6 +1,6 @@
 # Epsilon Grapher
 
-A simple Python program that draws a bar graph based on the results of an election conducted with [`Epsilon`](https://github.com/haframjolk/epsilon).
+A simple Python program that draws a bar graph based on the results of an election conducted with [Epsilon](https://github.com/haframjolk/epsilon).
 
 ## Prerequisites
 
@@ -23,4 +23,4 @@ poetry shell
 ./graph.py
 ```
 
-A Matplotlib window will open, showing the election results in a bar graph. The bar for empty ballots will be colored red. From the Matplotlib window it is possible to manipulate the graph or save it to an image file.
+A Matplotlib window will open, showing the election results in a bar graph. The bar for empty ballots will be colored red. From the Matplotlib window it is possible to manipulate the graph or save it as an image.
