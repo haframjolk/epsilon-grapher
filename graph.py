@@ -35,7 +35,8 @@ def draw():
     M = max(votes)
     # Write number of votes next to each bar
     for rect, val in zip(bars.patches, votes):
-        # Offset text to the right by 2% of the graph's width (proportional to work with elections of different sizes)
+        # Offset text to the right by 2% of the graph's width
+        # That way, the pixel value of the offset is always the same
         plt.text(rect.get_width() + M * 0.02,
                  rect.get_y() + rect.get_height() / 2,
                  val,
