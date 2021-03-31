@@ -2,6 +2,7 @@
 
 import json
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 
 
 def init():
@@ -26,6 +27,11 @@ def draw():
     plt.tick_params(axis="both", length=0)
     # Set tick labels to candidate names
     plt.yticks(y_pos, names)
+    # Only show integers on x axis ticks
+    ax = plt.gca()
+    ax.xaxis.set_major_locator(MaxNLocator(integer=True))
+    # Invert y axis
+    ax.invert_yaxis()
     # Set empty ballot bar color to red
     bars[-1].set_color("r")
     # Set labels
@@ -42,8 +48,6 @@ def draw():
                  val,
                  ha="left",
                  va="center")
-    # Invert y axis
-    plt.gca().invert_yaxis()
     # Set margins to fit vote labels
     plt.margins(0.1, 0.05)
     # Fit everything to the current layout
