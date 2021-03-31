@@ -17,22 +17,28 @@ def draw():
     plt.figure(dpi=150)
     # y range
     y_pos = range(len(data))
+    # Get data
+    names = data.keys()
+    votes = data.values()
     # Plot results
-    bars = plt.barh(y_pos, data.values(), align="center")
+    bars = plt.barh(y_pos, votes, align="center")
     # Hide ticks
     plt.tick_params(axis="both", length=0)
     # Set tick labels to candidate names
-    plt.yticks(y_pos, data.keys())
+    plt.yticks(y_pos, names)
     # Set empty ballot bar color to red
     bars[-1].set_color("r")
     # Set labels
     plt.xlabel("Votes")
     plt.title("Election Results")
+    # Get maximum number of votes to find the graph's width
+    M = max(votes)
     # Write number of votes next to each bar
-    for rect, val in zip(bars.patches, data.values()):
-        plt.text(rect.get_width() + 0.25,
+    for rect, val in zip(bars.patches, votes):
+        # Offset text to the right by 2% of the graph's width (proportional to work with elections of different sizes)
+        plt.text(rect.get_width() + M * 0.02,
                  rect.get_y() + rect.get_height() / 2,
-                 str(val),
+                 val,
                  ha="left",
                  va="center")
     # Invert y axis
