@@ -14,7 +14,7 @@ def init():
 def draw():
     """Draws a bar graph showing the results"""
     # Create figure
-    plt.figure(figsize=(6, 5), dpi=150)
+    plt.figure(dpi=150)
     # y range
     y_pos = range(len(data))
     # Plot results
