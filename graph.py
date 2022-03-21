@@ -64,7 +64,7 @@ def draw():
     # Fit everything to the current layout
     plt.tight_layout()
     # Save graph
-    plt.savefig("votes.png")
+    plt.savefig("results.png")
 
 
 init()
