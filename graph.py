@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 def init():
     """Initializes the required data"""
     global data
-    with open("votes.json") as f:
+    with open("results.json") as f:
         data = json.load(f)
 
 
@@ -63,8 +63,8 @@ def draw():
     plt.margins(0.1, 0.05)
     # Fit everything to the current layout
     plt.tight_layout()
-    # Show graph
-    plt.show()
+    # Save graph
+    plt.savefig("votes.png")
 
 
 init()

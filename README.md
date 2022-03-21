@@ -16,11 +16,10 @@ poetry install
 
 ## Usage
 
-Place an Epsilon election results JSON file in the `epsilon-grapher` directory, called `votes.json`. Then, run the following commands:
+Place an Epsilon election results JSON file in the `epsilon-grapher` directory, called `results.json`. Then, run the following commands:
 
 ```sh
-poetry shell
-./graph.py
+poetry run ./graph.py
 ```
 
-A Matplotlib window will open, showing the election results in a bar graph. The bar for empty ballots will be colored red. From the Matplotlib window it is possible to manipulate the graph or save it as an image.
+An image called `results.png` will be created, showing the election results in a bar graph. The bar for empty ballots will be colored red.
